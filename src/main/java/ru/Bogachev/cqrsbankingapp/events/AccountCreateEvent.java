@@ -5,16 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ru.Bogachev.cqrsbankingapp.domain.aggregate.Aggregate;
-import ru.Bogachev.cqrsbankingapp.domain.model.Transaction;
+import ru.Bogachev.cqrsbankingapp.domain.model.Account;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class TransactionCreateEvent extends AbstractEvent {
-
-    public TransactionCreateEvent(Transaction payload) {
-        super(null, EventType.TRANSACTION_CREATE, payload);
+public class AccountCreateEvent extends AbstractEvent {
+    public AccountCreateEvent(Account payload) {
+        super(null, EventType.ACCOUNT_CREATE, payload);
     }
 
     @Override
