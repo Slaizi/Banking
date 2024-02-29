@@ -14,7 +14,7 @@ public class AccountQueryServiceImpl implements AccountQueryService {
 
     @Override
     public Account getById(UUID id) {
-       return repository.findById(id)
-               .orElseThrow(RuntimeException::new);
+        return repository.findById(id)
+                .orElseThrow(RuntimeException::new);
     }
 }

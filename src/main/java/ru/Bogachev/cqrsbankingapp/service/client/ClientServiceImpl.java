@@ -9,8 +9,8 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class ClientServiceImpl implements ClientService {
-    private ClientCommandService commandService;
-    private ClientQueryService queryService;
+    private final ClientCommandService commandService;
+    private final ClientQueryService queryService;
 
     @Override
     public void create(Client object) {
@@ -20,5 +20,10 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client getById(UUID id) {
         return queryService.getById(id);
+    }
+
+    @Override
+    public boolean existsByUsername(String username) {
+        return queryService.existsByUsername(username);
     }
 }

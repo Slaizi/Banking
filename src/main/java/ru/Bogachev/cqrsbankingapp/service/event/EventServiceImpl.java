@@ -10,6 +10,7 @@ import ru.Bogachev.cqrsbankingapp.repository.EventRepository;
 public class EventServiceImpl implements EventService {
 
     private final EventRepository eventRepository;
+
     @Override
     public void create(AbstractEvent event) {
         eventRepository.save(event);

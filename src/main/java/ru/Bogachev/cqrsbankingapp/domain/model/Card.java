@@ -22,15 +22,22 @@ public class Card {
     private UUID id;
 
     private String number;
+
     private String date;
+
     private String cvv;
+
     @OneToMany
     @JoinTable(
             joinColumns = @JoinColumn(name = "card_id"),
             inverseJoinColumns = @JoinColumn(name = "transaction_id")
     )
     private List<Transaction> transactions;
+
     @ManyToOne
     private Account account;
 
+    public Card(Account account) {
+        this.account = account;
+    }
 }

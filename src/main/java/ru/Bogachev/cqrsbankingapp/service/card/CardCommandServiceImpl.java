@@ -9,7 +9,7 @@ import ru.Bogachev.cqrsbankingapp.service.event.EventService;
 @Service
 @RequiredArgsConstructor
 public class CardCommandServiceImpl implements CardCommandService {
-    private EventService eventService;
+    private final EventService eventService;
 
     @Override
     public void create(Card card) {
